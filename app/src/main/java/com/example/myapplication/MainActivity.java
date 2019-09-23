@@ -1,9 +1,7 @@
 package com.example.myapplication;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Build;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
@@ -42,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
         sendButton = findViewById(R.id.sendButton);
             //код при нажатии на кнопку
         sendButton.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.O)//какая то проверка,хз
             @Override
             public void onClick(View v) {
                String question = questionText.getText().toString();

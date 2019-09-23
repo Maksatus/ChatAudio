@@ -1,17 +1,12 @@
 package com.example.myapplication;
 
-import android.os.Build;
-
-import androidx.annotation.RequiresApi;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.logging.SimpleFormatter;
 
 public class AI {
     //Вопрос
-    @RequiresApi(api = Build.VERSION_CODES.O)
+
     public static String getAnswer (String question)
     {
         ArrayList<String> answer = new ArrayList<>();
@@ -47,8 +42,22 @@ public class AI {
         {
             answer.add("Я тебя не понимаю!");
         }
-       String result = String.join(",",answer);
+       //String result = String.join(",",answer);
 
+        String result ="";
+        if(answer.size()>1)
+        {
+            for (int i=0;i<answer.size();i++)
+            {
+                result = result + answer.get(i);
+                result = result + ",";
+            }
+        return  result.substring(0,result.length()-1);
+        }
+        else {
+            result = answer.get(0);
             return result;
+        }
+
     }
 }
